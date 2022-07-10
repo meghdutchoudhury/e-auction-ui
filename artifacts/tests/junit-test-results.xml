@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 103.0.5060.66 (Windows 10)" package="" timestamp="2022-07-04T13:41:49" id="0" hostname="nuci7" tests="34" errors="0" failures="0" time="0.667">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.66 Safari/537.36"/>
+  </properties>
+  <testcase name="Bid should create an instance" time="0.005" classname="Bid"/>
+  <testcase name="AuthInterceptor should be created" time="0.06" classname="AuthInterceptor"/>
+  <testcase name="AuthInterceptor should trigger interceptor handler" time="0.019" classname="AuthInterceptor"/>
+  <testcase name="ProductService should invoke get products endpoint" time="0.007" classname="ProductService"/>
+  <testcase name="ProductService should handle errors on get products endpoint" time="0.024" classname="ProductService"/>
+  <testcase name="ProductService should be created" time="0.043" classname="ProductService"/>
+  <testcase name="ProductService should handle errors on get bids endpoint" time="0.026" classname="ProductService"/>
+  <testcase name="Buyer should create an instance" time="0.002" classname="Buyer"/>
+  <testcase name="TokenStorageService should be created" time="0.003" classname="TokenStorageService"/>
+  <testcase name="TokenStorageService should save new token" time="0.003" classname="TokenStorageService"/>
+  <testcase name="TokenStorageService should get token" time="0.002" classname="TokenStorageService"/>
+  <testcase name="GetBidsResponseBidEntity should create an instance" time="0.001" classname="GetBidsResponseBidEntity"/>
+  <testcase name="BidViewerComponent should get list of bids" time="0.132" classname="BidViewerComponent"/>
+  <testcase name="BidViewerComponent should create" time="0.016" classname="BidViewerComponent"/>
+  <testcase name="BidViewerComponent should not set bids on service failure" time="0.007" classname="BidViewerComponent"/>
+  <testcase name="HomeComponent should clear session storage if logging out" time="0.104" classname="HomeComponent"/>
+  <testcase name="HomeComponent should call get bids on product for child component" time="0.018" classname="HomeComponent"/>
+  <testcase name="HomeComponent should create" time="0.017" classname="HomeComponent"/>
+  <testcase name="Product should create an instance" time="0" classname="Product"/>
+  <testcase name="LoginComponent should set isLoggedIn if new session token was retrieved successfully" time="0.015" classname="LoginComponent"/>
+  <testcase name="LoginComponent should set isLoggedIn if session token is already present during page load" time="0.012" classname="LoginComponent"/>
+  <testcase name="LoginComponent should create" time="0.007" classname="LoginComponent"/>
+  <testcase name="LoginComponent should set isLoginFailed if new session token was not retrieved" time="0.01" classname="LoginComponent"/>
+  <testcase name="Seller should create an instance" time="0" classname="Seller"/>
+  <testcase name="ProductViewerComponent should get list of products on page load" time="0.071" classname="ProductViewerComponent"/>
+  <testcase name="ProductViewerComponent should have empty list of products on service failure" time="0.007" classname="ProductViewerComponent"/>
+  <testcase name="ProductViewerComponent should emit selected product event if called" time="0.007" classname="ProductViewerComponent"/>
+  <testcase name="ProductViewerComponent should create" time="0.008" classname="ProductViewerComponent"/>
+  <testcase name="AuthGuardService should be created" time="0.006" classname="AuthGuardService"/>
+  <testcase name="AuthGuardService should pass-through to restricted pages if logged in" time="0.004" classname="AuthGuardService"/>
+  <testcase name="AuthGuardService should guard restricted pages if not logged in" time="0.008" classname="AuthGuardService"/>
+  <testcase name="AppComponent should create the app" time="0.006" classname="AppComponent"/>
+  <testcase name="AuthService should be created" time="0.008" classname="AuthService"/>
+  <testcase name="AuthService should invoke authenticate endpoint" time="0.009" classname="AuthService"/>
+  <system-out>
+    <![CDATA[Chrome Headless 103.0.5060.66 (Windows 10) LOG: null
+,Chrome Headless 103.0.5060.66 (Windows 10) LOG: 'service failure'
+,Chrome Headless 103.0.5060.66 (Windows 10) LOG: null
+,Chrome Headless 103.0.5060.66 (Windows 10) LOG: null
+,Chrome Headless 103.0.5060.66 (Windows 10) LOG: null
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0303: Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0303: Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0303: Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0303: Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Chrome Headless 103.0.5060.66 (Windows 10) LOG: '1656945708425'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'service failure'
+,Chrome Headless 103.0.5060.66 (Windows 10) ALERT: 'Error while retrieving bids for selected product'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-product-viewer' is not a known element:
+1. If 'app-product-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-product-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-bid-viewer' is not a known element:
+1. If 'app-bid-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-bid-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-product-viewer' is not a known element:
+1. If 'app-product-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-product-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-bid-viewer' is not a known element:
+1. If 'app-bid-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-bid-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-product-viewer' is not a known element:
+1. If 'app-product-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-product-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-bid-viewer' is not a known element:
+1. If 'app-bid-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-bid-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 103.0.5060.66 (Windows 10) LOG: '1656945708425'
+,Chrome Headless 103.0.5060.66 (Windows 10) WARN: 'Spec 'AuthInterceptor should trigger interceptor handler' has no expectations.'
+,Chrome Headless 103.0.5060.66 (Windows 10) ERROR
+  An error was thrown in afterAll
+  Error: <toHaveBeenCalled> : Expected a spy, but got Function.
+  Usage: expect(<spyObj>).toHaveBeenCalled()
+  Error: <toHaveBeenCalled> : Expected a spy, but got Function.
+  Usage: expect(<spyObj>).toHaveBeenCalled()
+      at <Jasmine>
+      at SafeSubscriber._next (http://localhost:9876/_karma_webpack_/webpack:/src/app/interceptors/auth.interceptor.spec.ts:40:33)
+      at SafeSubscriber.__tryOrUnsub (http://localhost:9876/_karma_webpack_/webpack:/node_modules/rxjs/_esm2015/internal/Subscriber.js:183:1)
+      at SafeSubscriber.next (http://localhost:9876/_karma_webpack_/webpack:/node_modules/rxjs/_esm2015/internal/Subscriber.js:122:1)
+      at Subscriber._next (http://localhost:9876/_karma_webpack_/webpack:/node_modules/rxjs/_esm2015/internal/Subscriber.js:72:1)
+      at Subscriber.next (http://localhost:9876/_karma_webpack_/webpack:/node_modules/rxjs/_esm2015/internal/Subscriber.js:49:1)
+      at Observable._subscribe (http://localhost:9876/_karma_webpack_/webpack:/node_modules/rxjs/_esm2015/internal/util/subscribeToArray.js:3:1)
+      at Observable._trySubscribe (http://localhost:9876/_karma_webpack_/webpack:/node_modules/rxjs/_esm2015/internal/Observable.js:42:1)
+,Chrome 103.0.5060.66 (Windows 10) LOG: null
+,Chrome 103.0.5060.66 (Windows 10) WARN: 'Spec 'AuthInterceptor should trigger interceptor handler' has no expectations.'
+,Chrome 103.0.5060.66 (Windows 10) LOG: '1656945709591'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'service failure'
+,Chrome 103.0.5060.66 (Windows 10) ALERT: 'Error while retrieving bids for selected product'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-product-viewer' is not a known element:
+1. If 'app-product-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-product-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-bid-viewer' is not a known element:
+1. If 'app-bid-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-bid-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-product-viewer' is not a known element:
+1. If 'app-product-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-product-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-bid-viewer' is not a known element:
+1. If 'app-bid-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-bid-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-product-viewer' is not a known element:
+1. If 'app-product-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-product-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0304: 'app-bid-viewer' is not a known element:
+1. If 'app-bid-viewer' is an Angular component, then verify that it is part of this module.
+2. If 'app-bid-viewer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 103.0.5060.66 (Windows 10) LOG: '1656945709591'
+,Chrome 103.0.5060.66 (Windows 10) LOG: '1656945709979'
+,Chrome 103.0.5060.66 (Windows 10) LOG: '1656945709979'
+,Chrome 103.0.5060.66 (Windows 10) LOG: '1656945709979'
+,Chrome 103.0.5060.66 (Windows 10) LOG: 'service failure'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0303: Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0303: Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0303: Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Chrome 103.0.5060.66 (Windows 10) ERROR: 'NG0303: Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

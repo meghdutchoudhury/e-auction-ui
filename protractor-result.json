@@ -1,0 +1,65 @@
+[
+  {
+    "description": "e-auction to check the page title",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 1225
+  },
+  {
+    "description": "e-auction to check login username is mandatory",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 1439
+  },
+  {
+    "description": "e-auction to check login password is mandatory",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 1340
+  },
+  {
+    "description": "e-auction to check login password less than 4 character is rejected",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 1485
+  },
+  {
+    "description": "e-auction to check successful login redirects to home page",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 4390
+  },
+  {
+    "description": "e-auction to check product details panel is visible upon product selection",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 1205
+  },
+  {
+    "description": "e-auction to check bids table is visible upon product selection",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 855
+  }
+]

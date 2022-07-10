@@ -1,0 +1,25 @@
+<section class="h-100">
+    <div class="container h-100">
+
+        <div class="row justify-content-sm-center h-100">
+            <div class="col-sm-9">
+                <button type="button" class="btn btn-link float-right-custom" (click)="logout()">Log Out</button>
+                <div class="text-center my-5">
+                    <img src="../../../assets/images/auction-icon-20.png" alt="logo" width="100"><br><br>
+                    <h1 class="fs-4 card-title fw-bold mb-4 text-muted">E-Auction</h1>
+                </div>
+                <div class="card shadow-lg">
+                    <div class="card-body p-5">
+                        <app-product-viewer (selectedProductEvent)="selectedProductEvent($event)"></app-product-viewer>
+                        <br>
+                        <app-bid-viewer></app-bid-viewer>
+                    </div>
+                </div>
+                <div class="text-center mt-5 text-muted">
+                    Submitted by Meghdut Choudhury (756938)
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>

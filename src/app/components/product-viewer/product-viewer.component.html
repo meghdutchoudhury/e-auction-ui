@@ -1,0 +1,24 @@
+<div class="card" style="width: 100%;">
+    <div class="card-header">
+        <div class="container">
+            <div class="col-sm-10">
+                <br>
+                <h4>Select a Product to View Bids</h4>
+                <br>
+                <select class="form-control" id="selectedProduct" name="selectedProduct" [(ngModel)]="selectedProduct" (change)="this.selectedProductEmit()">
+                    <option *ngFor="let product of products" [ngValue]="product">{{ product.name }}</option>
+                </select>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list-group list-group-flush" *ngIf="selectedProduct.name">
+        <li class="list-group-item"><b>Product Name:</b> {{ selectedProduct.name }}</li>
+        <li class="list-group-item"><b>Short Description:</b> {{ selectedProduct.shortDescription }}</li>
+        <li class="list-group-item"><b>Detailed Description:</b> {{ selectedProduct.detailedDescription }}</li>
+        <li class="list-group-item"><b>Category:</b> {{ selectedProduct.category }}</li>
+        <li class="list-group-item"><b>Starting Price:</b> {{ selectedProduct.startingPrice }}</li>
+        <li class="list-group-item"><b>Bid End Date:</b> {{ selectedProduct.bidEndDateFormatted }}</li>
+    </ul>
+</div>

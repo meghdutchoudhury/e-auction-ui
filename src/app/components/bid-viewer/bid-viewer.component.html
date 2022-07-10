@@ -1,0 +1,35 @@
+<div class="card" style="width: 100%;">
+    <div class="card-header">
+        <br>
+        <div class="container">
+            <h4>Bids for Selected Product</h4>
+        </div>
+        <br>
+    </div>
+    <br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Bid Amount</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="!bids || !bids.length">
+            <tr>
+                <td colspan="4" style="text-align: center">No bids to show</td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="bids && bids.length">
+            <tr *ngFor="let bid of bids">
+                <td>{{ bid.amount }}</td>
+                <td>{{ bid.buyer.firstName }} {{ bid.buyer.lastName }}</td>
+                <td>{{ bid.buyer.email }}</td>
+                <td>{{ bid.buyer.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+</div>

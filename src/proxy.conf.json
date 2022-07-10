@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "http://localhost:9080/e-auction/api/v1/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

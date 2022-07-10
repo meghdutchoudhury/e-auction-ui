@@ -1,0 +1,77 @@
+stages:
+  - build
+  - test
+  - publish
+  - deploy
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - node_modules/
+  - dist/
+
+build:
+  image: node:12-alpine
+  stage: build
+  script:
+    - npm install
+    - npm run build -- --prod
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/dist
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+
+test:
+  image: markhobson/node-chrome:latest
+  stage: test
+  script:
+    - npm install
+    - npm run lint
+    - npm test -- --browsers=ChromeHeadless --watch=false --code-coverage
+  artifacts:
+    paths:
+      - coverage/
+    name: "tests-and-coverage"
+    reports:
+      junit:
+        - $OUTPUT_PATH/tests/junit-test-results.xml
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+
+publish:
+  image: python:latest
+  stage: publish
+  before_script:
+    - pip install awscli 
+  script:
+    - aws s3 sync ./dist s3://e-auction-ui/ --acl=public-read --delete
+  only:
+  - main
+
+deploy:ec2:
+  image: python:latest
+  stage: deploy
+  before_script:
+    - pip install awscli
+  script:
+    - echo "Checking for running instances"
+    - aws ec2 describe-instances --query 'Reservations[].Instances[].InstanceId' --filters "Name=tag:service,Values=e-auction-ui" --output text
+    - if [[ $(aws ec2 describe-instances --query 'Reservations[].Instances[].InstanceId' --filters "Name=tag:service,Values=e-auction-ui" --output text) ]]; then aws ec2 terminate-instances --instance-ids $(aws ec2 describe-instances --query 'Reservations[].Instances[].InstanceId' --filters "Name=tag:service,Values=e-auction-ui" --output text); else echo "No UI EC2 Instances running"; fi
+    - INSTANCE_ID=$(aws ec2 run-instances --launch-template LaunchTemplateId=lt-020f254f4af5ae379,Version="$Latest" --tag-specifications 'ResourceType=instance,Tags=[{Key=service,Value=e-auction-ui}]' --output text --query 'Instances[*].InstanceId')
+    - echo "Waiting for EC2 instance startup before registration in NLB target group"
+    - echo $INSTANCE_ID
+    - sleep 60
+    - aws elbv2 register-targets --target-group-arn arn:aws:elasticloadbalancing:us-east-1:043953693619:targetgroup/e-auction-ui/45bdae8bfee835ef --targets Id=$INSTANCE_ID
+  only:
+  - main

@@ -1,0 +1,53 @@
+<section class="h-100">
+    <div class="container h-100">
+        <div class="row justify-content-sm-center h-100">
+            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+                <div class="text-center my-5">
+                    <img src="../../../assets/images/auction-icon-20.png" alt="logo" width="100"><br><br>
+                    <h1 class="fs-4 card-title fw-bold mb-4 text-muted">E-Auction</h1>
+                </div>
+
+                <div class="card shadow-lg">
+                    <div class="card-body p-5">
+                        <h5 class="card-title fw-bold mb-4">Login as Cognito App Client</h5>
+                        <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                            <div class="form-group">
+                                <label for="username" class="mb-2 text-muted">Client ID</label>
+                                <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel" />
+                                <br>
+                                <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
+                                    Username is required!
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="mb-2 text-muted">Client Secret</label>
+                                <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="4" #password="ngModel" />
+                                <br>
+                                <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+                                    <div *ngIf="password.errors['required']">Password is required</div>
+                                    <div *ngIf="password.errors['minlength']">
+                                        Password must be at least 4 characters
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button [disabled]="isLoginInProgress" class="btn btn-primary btn-block">
+                            Login
+                          </button>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+                                    Login unsuccessful
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center mt-5 text-muted">
+                    Submitted by Meghdut Choudhury (756938)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
